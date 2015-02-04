@@ -1,0 +1,134 @@
+﻿body {
+    font-size: .8em;
+    font-family: Calibri, Verdana, 'Courier New';
+    max-width: 942px;
+    margin: 0px auto;
+    border: 1px solid black;
+}
+
+#cabecalho {
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.conteudo {
+    margin: 30px;
+    border-radius: 15px;
+    background-color: #EEE;
+    padding: 15px;
+}
+
+#rodape {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    height: 25px;
+    padding-top: 10px;
+}
+
+/*
+MENU HORIZONTAL
+Clearfix for the menu
+*/
+.ui-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.ui-menu .ui-menu-item {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0px 10px;
+    width: auto;
+	font-weight: normal;
+}
+/* Correcao para DataTables, texto em cor branca: */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+  color: white;
+}
+.dataTables_wrapper .dataTables_paginate .fg-button {
+	color: white !important;
+}
+/* Titulos em cinza mais escuro */
+.dataTable .ui-state-default{
+	color: #777;
+}
+/* Linhas com cores intercaladas */
+table.dataTable tbody tr.even{
+	background-color: #EEE !important;
+}
+table.dataTable tbody tr:hover{
+	background-color: #DDD !important;
+}
+/* Texto em preto dentro do dialog */
+#dialogDetalhes.ui-widget-content{
+	color: black !important;
+}
+.anotacao, .logo, .titulo {
+    display:inline-block;
+    height: 65px;
+    vertical-align: middle;
+    font-size: 2em;
+}
+.logo{
+    width: 10%;
+}
+.titulo {
+    width: 55%;
+}
+.anotacao{
+    width: 30%;
+}
+    .titulo span,.anotacao span {
+        width: inherit;
+        display: table-cell;
+        height: inherit;
+        vertical-align: middle;
+    }
+
+    
+.filtros label {
+    width: 39%;
+    display: inline-block;
+    text-align: right;
+}
+.filtros input[type=text],.filtros  select{
+	box-sizing:content-box;
+    width: 59%;
+}
+.filtros textarea {
+	box-sizing:content-box;
+    width: 58%;
+	vertical-align: text-top;
+}
+.coluna{
+	width: 48%; 
+	float: left;
+}
+
+.icone{
+	width: 10px;
+	height: 10px;
+	border: none;
+}
+.textcenter{
+	text-align:center;
+}

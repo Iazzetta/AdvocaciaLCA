@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Advocacia LCA</title>
+	<meta http-equiv="cache-control" content="no-cache">
+	
+    <script type="text/javascript" src="plugins/jquery-ui-1.10.4/js/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="plugins/jquery-ui-1.10.4/css/dark-hive/jquery-ui.min.css" />
+	<script type="text/javascript" src="plugins/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+    <link rel="stylesheet" href="plugins/jquery-ui-1.10.4/css/dark-hive/jquery.ui.theme.css" />
+
+    <script type="text/javascript" src="plugins/datatables/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="plugins/datatables/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="plugins/datatables/js/dataTables.jqueryui.js"></script>
+    <link rel="stylesheet" href="plugins/datatables/css/jquery.dataTables_themeroller.min.css" />
+    <link rel="stylesheet" href="plugins/datatables/css/dataTables.jqueryui.css" />
+	
+    <script type="text/javascript" src="plugins/jquery.maskedinput.min.js"></script>
+	
+    <link rel="stylesheet" href="css/LCA_adv.css" />
+    <script type="text/javascript" src="js/LCA_Adv.js"></script>
+    <script type="text/javascript" src="js/LCA_WebDB.js"></script>
+    <script type="text/javascript" src="js/LCA_WebDBInit.js"></script>
+</head>
+<body>
+    <div id="cabecalho">
+        <span class="logo"><img src="img/logo_lca.gif" alt="Logo LCA" /></span>
+        <span class="titulo"><span>Consulta de Processos</span></span>
+        <span class="anotacao"><span>Risadas - 1.o TDSS</span></span>
+        <div>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html"><img src="img/search.png" alt="Consultar Lancamentos" class="icone" /> Consultar Processos</a></li>
+                <li><a href="cadastrarProcesso.html"><img src="img/notification_add.png" alt="Consultar Lancamentos" class="icone" /> Cadastrar Processo</a></li>
+                <li><a href="cadastrarDespesa.html"><img src="img/file_add.png" alt="Nova Despesa" class="icone" /> Lançar Despesa</a></li>
+                <li><a href="cadastrarHonorario.html"><img src="img/document_add.png" alt="Novo Honorario" class="icone" /> Lançar Honorário</a></li>
+            </ul>
+        </div>
+    </div>
+    <form class="conteudo">
+		<div class="filtros coluna">
+			<div>
+				<label for="numero_Processo">
+					Número do Processo
+				</label>
+				<input id="numero_Processo" type="text" />
+			</div>
+			<div>
+				<label for="cliente">
+					Cliente
+				</label>
+				<select id="cliente">
+					<option value="">Selecione o cliente...</option>
+				</select>
+			</div>
+		</div>
+		<div class="filtros coluna">
+			<div>
+				<label for="dataDe">
+					Período:
+				</label>
+				<input id="dataDe" type="text" style="width: 27%;" /> a
+				<input id="dataAte" type="text" style="width: 27%;" />
+			</div>
+			<div class="textcenter">
+				<input type="button" value="Buscar" onclick="buscarProcesso();" />
+			</div>
+		</div>
+		
+        <div>
+            <table id="tabelaProcessos">
+                <thead>
+                    <tr>
+                        <th>Numero</th>
+                        <th>Descrição</th>
+                        <th>Cliente</th>
+                        <th>Advogado</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Numero</th>
+                        <th>Descrição</th>
+                        <th>Cliente</th>
+                        <th>Advogado</th>
+                        <th>Ação</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Numero</td>
+                        <td>Descrição</td>
+                        <td>Cliente</td>
+                        <td>Advogado</td>
+                        <td>Ação</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		<div id="dialogDetalhes" style="display: none;">
+			<table id="tabelaDespesas">
+                <thead>
+                    <tr>
+                        <th>Despesa</th>
+                        <th>Advogado</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Observacao</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Despesa</th>
+                        <th>Advogado</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Observacao</th>
+                        <th>Acoes</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Despesa</td>
+                        <td>Advogado</td>
+                        <td>Data</td>
+                        <td>Valor</td>
+                        <td>Observacao</td>
+                        <td>Acoes</td>
+                    </tr>
+                </tbody>
+            </table>
+			<table id="tabelaHonorarios">
+                <thead>
+                    <tr>
+                        <th>Tarefa</th>
+                        <th>Advogado</th>
+                        <th>Data</th>
+                        <th>Horas</th>
+                        <th>Observacao</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Tarefa</th>
+                        <th>Advogado</th>
+                        <th>Data</th>
+                        <th>Horas</th>
+                        <th>Observacao</th>
+                        <th>Acoes</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Tarefa</td>
+                        <td>Advogado</td>
+                        <td>Data</td>
+                        <td>Horas</td>
+                        <td>Observacao</td>
+                        <td>Acoes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+		</div>
+    </form>
+    <div id="rodape" class="">
+        Advocacia LCA @ Todos os direitos reservados
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#menu").menu();
+			$("#numero_Processo").mask("9999999-99.9999.9.99.9999");
+            $("#dataDe").datepicker({ dateFormat: "dd/mm/yy" });
+            $("#dataAte").datepicker({ dateFormat: "dd/mm/yy" });
+			$('#tabelaProcessos').dataTable({
+				"lengthMenu": [[5, 10, 20, 50, -1], [5, 10, 20, 50, "All"]]
+				/*
+				", language": {
+					"url": "plugins/datatables/ptbr.txt"
+				}
+				*/
+			});
+			$('#tabelaDespesas').dataTable({
+				"info":      false,
+				"searching": false,
+			});
+			$('#tabelaHonorarios').dataTable({
+				"info":      false,
+				"searching": false,
+			});
+            $("input[type=submit],button,input[type=button]").button();
+			carregarSelectFromDB("cliente","clientes");
+			carregarProcessos();
+        })
+    </script>
+	<div id="a"></div>
+</body>
+</html>
