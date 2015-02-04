@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Classe representando a conex„o com banco de dados Oracle
- * @author Docau
+ * Classe representando a conex√£o com banco de dados Oracle
+ * @author Iazzetta
  *
  */
 
@@ -38,14 +38,14 @@ public class ConnectionManager {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			connection = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:xe", "SYSTEM","pqpfdp"); //NOME DO BANCO XE
+					"jdbc:oracle:thin:@localhost:1521:xe", "SYSTEM","SENHA"); //NOME DO BANCO XE
 			System.out.println("Conectado ao banco.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("N„o foi possivel conectar no banco de dados: " + e.getMessage());
+			System.out.println("N√£o foi possivel conectar no banco de dados: " + e.getMessage());
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println("N„o foi possivel encontrar a Classe: " + e.getMessage());
+			System.out.println("N√£o foi possivel encontrar a Classe: " + e.getMessage());
 		}
 
 		return connection;
