@@ -18,11 +18,12 @@ public class ProcessoTO implements Serializable {
 	private int nr_processo;
 	private ClienteTO cliente;
 	private AdvogadoTO advogado;
+	private TipoCausaTO tipoCausa;
 	private ForumTO forum;
 	private String ds_processo;
 	private Calendar dt_abertura;
 	private Calendar dt_fechamento;
-	private Calendar dt_dia_vencimento;
+	private int dt_dia_vencimento;
 	private int nr_resultado;
 	private int nr_situacao;
 	private String ds_observacao;
@@ -50,6 +51,18 @@ public class ProcessoTO implements Serializable {
 	 */
 	public void setAdvogado(AdvogadoTO advogado) {
 		this.advogado = advogado;
+	}
+	/**
+	 * @return the tipoCausa
+	 */
+	public TipoCausaTO getTipoCausa() {
+		return tipoCausa;
+	}
+	/**
+	 * @param tipoCausa the tipoCausa to set
+	 */
+	public void setTipoCausa(TipoCausaTO tipoCausa) {
+		this.tipoCausa = tipoCausa;
 	}
 	/**
 	 * @return the forum
@@ -130,13 +143,13 @@ public class ProcessoTO implements Serializable {
 	/**
 	 * @return the dt_dia_vencimento
 	 */
-	public Calendar getDt_dia_vencimento() {
+	public int getDt_dia_vencimento() {
 		return dt_dia_vencimento;
 	}
 	/**
 	 * @param dt_dia_vencimento the dt_dia_vencimento to set
 	 */
-	public void setDt_dia_vencimento(Calendar dt_dia_vencimento) {
+	public void setDt_dia_vencimento(int dt_dia_vencimento) {
 		this.dt_dia_vencimento = dt_dia_vencimento;
 	}
 	/**

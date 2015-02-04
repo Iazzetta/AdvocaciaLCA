@@ -18,7 +18,7 @@ public class TipoTarefaTO implements Serializable {
 	private static final long serialVersionUID = -8786679143175640916L;
 	
 	private int cd_tipo_tarefa;
-	private int ds_tipo_tarefa;
+	private String ds_tipo_tarefa;
 	
 	/**
 	 * @return the cd_tipo_tarefa
@@ -35,13 +35,13 @@ public class TipoTarefaTO implements Serializable {
 	/**
 	 * @return the ds_tipo_tarefa
 	 */
-	public int getDs_tipo_tarefa() {
+	public String getDs_tipo_tarefa() {
 		return ds_tipo_tarefa;
 	}
 	/**
 	 * @param ds_tipo_tarefa the ds_tipo_tarefa to set
 	 */
-	public void setDs_tipo_tarefa(int ds_tipo_tarefa) {
+	public void setDs_tipo_tarefa(String ds_tipo_tarefa) {
 		this.ds_tipo_tarefa = ds_tipo_tarefa;
 	}
 	/**

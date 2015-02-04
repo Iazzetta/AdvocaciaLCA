@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Advocacia LCA</title>
@@ -29,11 +29,11 @@
         <span class="anotacao"><span>Risadas - 1.o TDSS</span></span>
         <div>
             <ul id="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html"><img src="img/search.png" alt="Consultar Lancamentos" class="icone" /> Consultar Processos</a></li>
-                <li><a href="cadastrarProcesso.html"><img src="img/notification_add.png" alt="Consultar Lancamentos" class="icone" /> Cadastrar Processo</a></li>
-                <li><a href="cadastrarDespesa.html"><img src="img/file_add.png" alt="Nova Despesa" class="icone" /> LanÃ§ar Despesa</a></li>
-                <li><a href="cadastrarHonorario.html"><img src="img/document_add.png" alt="Novo Honorario" class="icone" /> LanÃ§ar HonorÃ¡rio</a></li>
+                <li><a href="index.jsp">Home</a></li>
+                <li><a href="index.jsp"><img src="img/search.png" alt="Consultar Lancamentos" class="icone" /> Consultar Processos</a></li>
+                <li><a href="cadastrarProcesso.jsp"><img src="img/notification_add.png" alt="Consultar Lancamentos" class="icone" /> Cadastrar Processo</a></li>
+                <li><a href="cadastrarDespesa.jsp"><img src="img/file_add.png" alt="Nova Despesa" class="icone" /> Lançar Despesa</a></li>
+                <li><a href="cadastrarHonorario.jsp"><img src="img/document_add.png" alt="Novo Honorario" class="icone" /> Lançar Honorário</a></li>
             </ul>
         </div>
     </div>
@@ -42,7 +42,7 @@
 		<div class="filtros coluna">
 			<div>
 				<label for="numero">
-					NÃºmero: 
+					Número: 
 				</label>
 				<input id="numero" type="text" />
 			</div>
@@ -56,7 +56,7 @@
 			</div>
 			<div>
 				<label for="advogado">
-					Advogado ResponsÃ¡vel: 
+					Advogado Responsável: 
 				</label>
 				<select id="advogado">
 					<option value="">Selecione o processo...</option>
@@ -64,7 +64,7 @@
 			</div>
 			<div>
 				<label for="descricao">
-					DescriÃ§Ã£o: 
+					Descrição: 
 				</label>
 				<input id="descricao" type="text" />
 			</div>
@@ -106,7 +106,7 @@
 			</div>
 			<div>
 				<label for="observacao">
-					ObservaÃ§Ãµes:
+					Observações:
 				</label>
 				<textarea id="observacao"></textarea>
 			</div>

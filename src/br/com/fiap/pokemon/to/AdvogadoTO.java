@@ -13,10 +13,10 @@ public class AdvogadoTO extends PessoaTO {
 	 */
 	private static final long serialVersionUID = -1743219023843753354L;
 	
-	private String cd_advogado;
+	private int cd_advogado;
 	private int nr_oab;
-	private String nr_cpf;
-	private int	nr_rg;
+	private Long nr_cpf;
+	private String	nr_rg;
 	private String ds_email;
 	private String ds_password;
 	
@@ -25,7 +25,7 @@ public class AdvogadoTO extends PessoaTO {
 	 * Metodo get Advogado
 	 * @return
 	 */
-	public String getCd_advogado() {
+	public int getCd_advogado() {
 		return cd_advogado;
 	}
 	
@@ -33,7 +33,7 @@ public class AdvogadoTO extends PessoaTO {
 	 * Metodo set Advogado
 	 * @param cd_advogado
 	 */
-	public void setCd_advogado(String cd_advogado) {
+	public void setCd_advogado(int cd_advogado) {
 		this.cd_advogado = cd_advogado;
 	}
 	
@@ -57,7 +57,7 @@ public class AdvogadoTO extends PessoaTO {
 	 * Metodo get NR CPF
 	 * @return
 	 */
-	public String getNr_cpf() {
+	public Long getNr_cpf() {
 		return nr_cpf;
 	}
 	
@@ -65,15 +65,15 @@ public class AdvogadoTO extends PessoaTO {
 	 * Metodo set NR CPF
 	 * @param nr_cpf
 	 */
-	public void setNr_cpf(String nr_cpf) {
+	public void setNr_cpf(Long nr_cpf) {
 		this.nr_cpf = nr_cpf;
 	}
 	
 	/**
-	 *Metodo Get Numero RG
+	 * Metodo Get Numero RG
 	 * @return
 	 */
-	public int getNr_rg() {
+	public String getNr_rg() {
 		return nr_rg;
 	}
 	
@@ -81,7 +81,7 @@ public class AdvogadoTO extends PessoaTO {
 	 * Metodo set Numero RG 
 	 * @param nr_rg
 	 */
-	public void setNr_rg(int nr_rg) {
+	public void setNr_rg(String nr_rg) {
 		this.nr_rg = nr_rg;
 	}
 	

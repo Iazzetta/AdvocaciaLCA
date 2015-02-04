@@ -6,12 +6,14 @@ package br.com.fiap.pokemon.to;
 import java.io.Serializable;
 import java.util.Calendar;
 
+import br.com.fiap.pokemon.helpers.Helpers;
+
 /**
  * Entidade representando a funcionalidade Lançar Despesa
  * @author Docau
  *
  */
-public class LancaDespesaTO implements Serializable {
+public class DespesaTO implements Serializable {
 
 	/**
 	 * ID de serialização
@@ -19,27 +21,14 @@ public class LancaDespesaTO implements Serializable {
 	private static final long serialVersionUID = -8868844798629780015L;
 
 	
-	private int cd_lançamento;
+	private int cd_lancamento;
 	private TipoDespesaTO tipo_despesa;
 	private ProcessoTO processo;
 	private Calendar dt_despesa;
 	private double vl_despesa;
 	private String ds_observacao;
 	
-	/**
-	 * Metodo get Codigo Lançamento
-	 * @return the cd_lançamento
-	 */
-	public int getCd_lançamento() {
-		return cd_lançamento;
-	}
-	/**
-	 * Metdo set Codigo Lançamento
-	 * @param cd_lançamento the cd_lançamento to set
-	 */
-	public void setCd_lançamento(int cd_lançamento) {
-		this.cd_lançamento = cd_lançamento;
-	}
+
 	/**
 	 * Metodo get Tipo Despesa
 	 * @return the tipo_despesa
@@ -116,6 +105,22 @@ public class LancaDespesaTO implements Serializable {
 	 */
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	/**
+	 * @return the cd_lancamento
+	 */
+	public int getCd_lancamento() {
+		return cd_lancamento;
+	}
+	/**
+	 * @param cd_lancamento the cd_lancamento to set
+	 */
+	public void setCd_lancamento(int cd_lancamento) {
+		this.cd_lancamento = cd_lancamento;
+	}
+	
+	public String getDataFormatada(){
+		return Helpers.CalendarToString(this.dt_despesa);
 	}
 	
 	
